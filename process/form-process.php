@@ -1,11 +1,11 @@
 <?php
     include "../config/connection.php";
 
-    $form_a = "aspirasi";
-    $form_l = "laporan";
+    $form_aspirasi = "aspirasi";
+    $form_laporan = "laporan";
 
-    $kode_aspirasi = "KAN" + get_count_aspirasi();
-    // $kode_laporan = "KPN" + get_count_laporan();
+    $kode_aspirasi = "AS1".get_date();
+    $kode_laporan = "LP1".get_date();
     $nama = $_POST['nama'];
     $noIdentitas = $_POST['noIdentitas'];
     $status = $_POST['status'];
@@ -18,37 +18,30 @@
     $tanggal = $_POST['tanggal'];
     $status_tabel = "pending";
 
-    function get_count_aspirasi() {
-        $get_aspirasi_query = mysqli_query($koneksi, "SELECT COUNT(*) FROM aspirasi");
-        $get_aspirasi_done_query = mysqli_query($koneksi, "SELECT COUNT(*) FROM aspirasiSelesai");
-
-        $total_aspirasi = $get_aspirasi_query + $get_aspirasi_done_query;
-
-        return $total_aspirasi;
-
+    function get_date() {
+        date_default_timezone_set("Asia/Jakarta");
+        return date("mdhis");
     }
 
-    function get_count_laporan() {
-        $get_laporan_query = mysqli_query($koneksi, "SELECT COUNT(*) FROM laporan");
-        $get_laporan_done_query = mysqli_query($koneksi, "SELECT COUNT(*) FROM laporanSelesai");
-
-        $total_laporan = $get_laporan_query + $get_laporan_done_query;
-
-        return $total_laporan;
-    }
-
-    if (isset($_POST[$form_a])) {
+    if (isset($_POST[$form_aspirasi])) {
         $query = mysqli_query($koneksi, "CALL insert_aspirasi('$kode_aspirasi','$nama','$noIdentitas',
         '$status','$email','$notel','$rujukan','$kategori','$judul','$deskripsi','$tanggal','$status_tabel')");
 
         if ($query) {
-            header("Location: ../aspirasi.php");
+            header("Location: ../aspirasi.html");
         } else {
             echo "Belum diisi";
         }
 
-    } else if (isset($_POST[$form_l])) {
-        echo "Ini dari laporan";
+    } else if (isset($_POST[$form_laporan])) {
+        $query = mysqli_query($koneksi, "CALL insert_laporan('$kode_laporan','$nama','$noIdentitas',
+        '$status','$email','$notel','$rujukan','$kategori','$judul','$deskripsi','$tanggal','$status_tabel')");
+
+        if ($query) {
+            header("Location: ../pengaduan.html");
+        } else {
+            echo "Belum diisi";
+        }
     } else {
         echo "Ngaco nih";
     }
