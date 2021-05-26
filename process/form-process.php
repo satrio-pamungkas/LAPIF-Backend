@@ -28,7 +28,7 @@
         '$status','$email','$notel','$rujukan','$kategori','$judul','$deskripsi','$tanggal','$status_tabel')");
 
         if ($query) {
-            header("Location: ../aspirasi.html");
+            header("Location: ../form/aspirasi.php");
         } else {
             echo "Belum diisi";
         }
@@ -38,12 +38,12 @@
         '$status','$email','$notel','$rujukan','$kategori','$judul','$deskripsi','$tanggal','$status_tabel')");
 
         if ($query) {
-            header("Location: ../pengaduan.html");
+            header("Location: ../form/pengaduan.php");
         } else {
             echo "Belum diisi";
         }
     } else {
-        echo "Ngaco nih";
+        echo "404";
     }
 
 ?>
