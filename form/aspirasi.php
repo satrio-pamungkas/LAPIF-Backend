@@ -8,41 +8,15 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <title>Layanan Aspirasi - LAPIF</title>
-    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
 </head>
 
 <body>
     <div class="container-fluid p-0">
+        <?php $path = "../"; ?>
         <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
-                    <div class="logo">
-                        <img class="logo" src="img/logo.svg" alt="logo.svg" />
-                    </div>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-font-custom nav-link text-primary" aria-current="page"
-                                href="pengaduan.html">PENGADUAN</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-font-custom nav-link active text-primary" href="aspirasi.html">ASPIRASI</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-font-custom nav-link text-primary" href="#">FORUM</a>
-                        </li>
-                    </ul>
-                    <button class="nav-font-custom btn btn-primary text-white" onclick="redirect()">MASUK</button>
-                </div>
-            </div>
-        </nav>
+        <?php include '../templates/navbar.php'; ?>
         <!-- end navbar-->
 
         <!-- content -->
@@ -61,7 +35,7 @@
 
                 <!-- new form -->
                 <div class="container new-form shadow rounded bg-light">
-                    <form class="row p-3" action="process/form-process.php" style="position: relative;" method="POST">
+                    <form class="row p-3" action="../process/form-process.php" style="position: relative;" method="POST">
                         <div class="col-12">
                             <label for="nama" class="form-label">Nama Aspirator</label>
                             <input type="text" class="form-control" id="nama" placeholder="Nama" name="nama" />
@@ -131,23 +105,8 @@
 
         </div>
         <!-- end of backround -->
-
-
-
         <!-- Footer -->
-        <div class="footer">
-            <div class="hyperlink">
-                <ul>
-                    <li><a href="index.html">BERANDA</a></li>
-                    <li><a href="pengaduan.html">PENGADUAN</a></li>
-                    <li><a href="aspirasi.html">ASPIRASI</a></li>
-                    <li><a href="#">FORUM</a></li>
-                    <li><a href="login.html">MASUK</a></li>
-                    <li><a href="#">HUBUNGI KAMI</a></li>
-                </ul>
-            </div>
-            <p id="copyright">Copyright 2021. Kelompok 7 Pemrograman Web</p>
-        </div>
+        <?php include '../templates/footer.php'; ?>
         <!-- end of footer -->
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
