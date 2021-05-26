@@ -33,5 +33,16 @@
 
     $kode_aspirasi = "AS1".get_date();
 
-    echo $kode_aspirasi;
+    // Fungsi untuk Select data
+    function get_number() {
+        global $koneksi;
+
+        $result = mysqli_query($koneksi, "SELECT COUNT(*) AS total FROM laporan");
+        $num = mysqli_fetch_assoc($result);
+        // $total = intval($num);
+
+        return $num['total'];
+    }
+
+    echo get_number();
 ?>

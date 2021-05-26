@@ -15,7 +15,8 @@
     <div class="container-fluid p-0">
         <?php $path = '';?>
         <!-- navbar -->
-        <?php include "templates/navbar.php"; ?>
+        <?php include "templates/navbar.php"; 
+              include "config/connection.php"; ?>
         <!-- end navbar-->
         <!-- Section Selamat Datang di LAPIF -->
         <section id="banner-1">
@@ -60,14 +61,34 @@
                     <div class="col text-center">
                         <h1 class="banner-2-title-count mt-5 mb-3">Aspirasi</h1>
                         <div class="banner-2-count count-1">
-                            <span>88</span>
+                            <span>
+                                <?php
+                                    $query = "SELECT (SELECT COUNT(*) FROM aspirasi) + 
+                                    (SELECT COUNT(*) FROM aspirasiSelesai) AS total";
+
+                                    $result = mysqli_query($koneksi, $query);
+                                    $num = mysqli_fetch_assoc($result);
+
+                                    echo $num['total'];
+                                ?>
+                            </span>
                         </div>
                         <p class="banner-2-description-count mt-3 mb-5">Jumlah Aspirasi</p>
                     </div>
                     <div class="col text-center">
                         <h1 class="banner-2-title-count mt-5 mb-3">Pengaduan</h1>
                         <div class="banner-2-count count-2">
-                            <span>10</span>
+                            <span>
+                                <?php
+                                    $query = "SELECT (SELECT COUNT(*) FROM laporan) + 
+                                    (SELECT COUNT(*) FROM laporanSelesai) AS total";
+
+                                    $result = mysqli_query($koneksi, $query);
+                                    $num = mysqli_fetch_assoc($result);
+
+                                    echo $num['total'];
+                                ?>
+                            </span>
                         </div>
                         <p class="banner-2-description-count mt-3 mb-5">Jumlah Laporan</p>
                     </div>
