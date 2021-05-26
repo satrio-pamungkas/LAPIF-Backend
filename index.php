@@ -63,13 +63,12 @@
                         <div class="banner-2-count count-1">
                             <span>
                                 <?php
-                                    $query = "SELECT (SELECT COUNT(*) FROM aspirasi) + 
-                                    (SELECT COUNT(*) FROM aspirasiSelesai) AS total";
+                                    $query = "SELECT count_aspirasi()";
 
                                     $result = mysqli_query($koneksi, $query);
                                     $num = mysqli_fetch_assoc($result);
 
-                                    echo $num['total'];
+                                    echo $num['count_aspirasi()'];
                                 ?>
                             </span>
                         </div>
@@ -80,13 +79,12 @@
                         <div class="banner-2-count count-2">
                             <span>
                                 <?php
-                                    $query = "SELECT (SELECT COUNT(*) FROM laporan) + 
-                                    (SELECT COUNT(*) FROM laporanSelesai) AS total";
+                                    $query = "SELECT count_laporan()";
 
                                     $result = mysqli_query($koneksi, $query);
                                     $num = mysqli_fetch_assoc($result);
 
-                                    echo $num['total'];
+                                    echo $num['count_laporan()'];
                                 ?>
                             </span>
                         </div>
