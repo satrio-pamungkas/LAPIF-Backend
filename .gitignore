@@ -1,0 +1,9 @@
+# Tidak termasuk pada Git
+
+.DS_Store
+Thumbs.db
+npm-debug.log
+/bower-components
+/node_modules
+/vendor
+composer.phar
