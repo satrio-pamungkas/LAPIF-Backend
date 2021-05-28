@@ -24,12 +24,24 @@
                 <h3>Masuk</h3>
                 <p>Khusus untuk Admin</p>
                 <form action="../process/login-process.php" method="POST" onsubmit="return validateForm()">
-                    <label for="username">Username</label>
-                    <input class="form-control" type="text" placeholder="Username" name="username" id="username">
-                    <label for="password">Password</label>
-                    <input class="form-control" type="password" placeholder="Password" name="password" id="password">
-                    <a class="forgot" href="forgot-password.php"><u>Lupa Password</u></a>
-                    <input type="submit" value="login">
+                    <div class="my-3">
+                        <label for="username">Username</label>
+                        <input class="form-control" type="text" placeholder="Username" name="username" id="username">
+                    </div>
+                    <div class="my-3">
+                        <label for="password">Password</label>
+                        <input class="form-control" type="password" placeholder="Password" name="password"
+                            id="password">
+                    </div>
+                    <div class="form-check my-2">
+                        <input class="form-check-input" type="checkbox" value="" id="rememberPasswd" name="remember">
+                        <label class="form-check-label" for="rememberPasswd">Ingat Password</label>
+                    </div>
+                    <input type="submit" class="btn btn-primary" id="btnMasuk" value="Masuk" name="login">
+                    <div class="text-decoration-underline text-center mt-3">
+                        <a class="forgot" href="forgot-password.html">Lupa
+                            Password</a>
+                    </div>
                 </form>
             </div>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

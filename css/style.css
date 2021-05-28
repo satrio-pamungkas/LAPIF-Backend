@@ -344,11 +344,11 @@
 
 /* Login & Forgot Password CSS Started */
 .bg-login {
-    background: url(../img/background.png) lightblue;
+    background: url(../img/background.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
 }
 
 
@@ -396,10 +396,6 @@
 
 .formlog form input,
 .formfgpasswd form input {
-    width: 100%;
-    height: 43px;
-    margin-top: 10px;
-    margin-bottom: 15px;
     border: 2px solid #5157F8;
     background-color: #fff;
     border-radius: 10px;
@@ -468,10 +464,23 @@
     padding: 25px 0px 0px 0px;
 }
 
+#btnFgPasswd,
+#btnMasuk {
+    width: 100%;
+    border-color: #5157F8;
+    background-color: #5157F8;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+#btnFgPasswd:hover,
+#btnMasuk:hover {
+    background-color: #3539a0;
+    cursor: pointer;
+}
+
 /* Login & Forgot Password CSS Ended */
-
-
-
 
 /* Pelaporan dan Aspirasi CSS Started */
 #banner-1-asp-pengaduan {
@@ -486,6 +495,7 @@
     background: rgba(0, 0, 0, 0.562);
 }
 
+/* warning!!!! */
 .header {
     margin-top: 60px;
     background: black;
@@ -498,7 +508,7 @@
     opacity: 0.4;
 }
 
-.title {
+.title-asp-pgd {
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-size: 42px;
@@ -511,7 +521,7 @@
     transform: translate(-50%, -50%);
 }
 
-.description {
+.description-asp-pgd {
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
@@ -540,6 +550,104 @@
 }
 
 /* Pelaporan dan Aspirasi CSS Ended */
+
+/* Dashboard Admin Started */
+.dashboard-head .dashboard-text-header #title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    -webkit-text-stroke: 0.4px black;
+    color: white;
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.dashboard-head {
+    background: black;
+}
+
+.dashboard-head .dashboard-bg {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.dashboard-bg-card {
+    background-color: #e5e6f7;
+}
+
+.table-ungu {
+    background-color: #5157F8;
+    color: white;
+}
+
+.check {
+    background-image: url("../img/check.svg");
+}
+
+.expand {
+    background-image: url("../img/expand.svg");
+}
+
+.delete {
+    background-image: url("../img/delete.svg");
+}
+
+.check:hover,
+.expand:hover,
+.delete:hover {
+    filter: brightness(80%);
+}
+
+#button-col>button {
+    width: 30px;
+    height: 25px;
+    padding: 0;
+    border: none;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.pagin-primary-active .page-link {
+    background-color: #5157F8;
+    border-color: #5157F8;
+    color: white;
+    z-index: 3;
+}
+
+.pagin-primary-unactive {
+    color: #5157F8;
+}
+
+.btn-sub-nav {
+    display: inline-block;
+    padding: .375rem .75rem;
+    text-decoration: none;
+    cursor: pointer;
+    vertical-align: middle;
+    font-weight: 600;
+    color: #0d6efd;
+}
+
+.btn-sub-nav.unactive {
+    color: #322d49;
+    cursor: default;
+}
+
+/* Dashboard Admin Ended */
+/* 404 */
+.img-fluid {
+    width: 500px;
+    height: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
 @media (min-width: 992px) and (max-width: 1200px) {
 
     /* Banner 1 XL started */
@@ -609,14 +717,14 @@
         width: 80%;
     }
 
-    .title {
+    .title-asp-pgd {
         font-size: 30px;
         font-weight: 600;
         left: 50%;
         width: 400px;
     }
 
-    .description {
+    .description-asp-pgd {
         font-size: 18px;
         width: 250px;
     }
@@ -688,14 +796,14 @@
         width: 80%;
     }
 
-    .title {
+    .title-asp-pgd {
         font-size: 25px;
         font-weight: 600;
         left: 50%;
         width: 400px;
     }
 
-    .description {
+    .description-asp-pgd {
         font-size: 16px;
         width: 250px;
     }
@@ -705,6 +813,11 @@
     .white-background {
         width: 100%;
         height: 890px;
+    }
+
+    /* Dashboard MD Started*/
+    .dashboard-head .dashboard-text-header #title {
+        font-size: 22px;
     }
 }
 
@@ -781,13 +894,13 @@
         width: 80%;
     }
 
-    .title {
+    .title-asp-pgd {
         font-size: 25px;
         font-weight: 600;
         width: 300px;
     }
 
-    .description {
+    .description-asp-pgd {
         font-size: 16px;
         width: 200px;
     }
@@ -796,5 +909,11 @@
     .white-background {
         width: 100%;
         height: 900px;
+    }
+
+    /* Dashboard SM Started */
+    .dashboard-head .dashboard-text-header #title {
+        font-size: 22px;
+        width: 250px;
     }
 }

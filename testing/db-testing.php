@@ -44,5 +44,16 @@
         return $num['total'];
     }
 
-    echo get_number();
+    // Fungsi untuk get email
+    function get_email_address($username) {
+        global $koneksi;
+        
+        $result = mysqli_query($koneksi, "SELECT email FROM userAdmin WHERE 
+        username='$username'");
+        $email = mysqli_fetch_assoc($result);
+
+        return $email['email'];
+    }
+
+    echo get_email_address("satrio");
 ?>
