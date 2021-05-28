@@ -56,22 +56,21 @@
         <!-- pilihan tabel -->
         <div class="row text-center mt-5">
             <hr>
-            <div class="col-12 col-sm-2"><a class="btn-sub-nav unactive" href="#">Data Aspirasi</a>
-            </div>
+            <div class="col-12 col-sm-2"><a class="btn-sub-nav" href="dashboard-aspirasi.php">Data Aspirasi</a></div>
             <div class="col-12 col-sm-2"><a class="btn-sub-nav" href="dashboard-pengaduan.php">Data Pengaduan</a></div>
             <div class="col-12 col-sm-2"><a class="btn-sub-nav" href="dashboard-forum.php">Data Forum Diskusi</a></div>
             <div class="col-12 col-sm-2"><a class="btn-sub-nav" href="dashboard-aspirasi-selesai.php">Data Aspirasi
                     Selesai</a>
             </div>
-            <div class="col-12 col-sm-2"><a class="btn-sub-nav" href="dashboard-pengaduan-selesai.php">Data Pengaduan
-                    Selesai</a>
-            </div>
+            <div class="col-12 col-sm-2"><a class="btn-sub-nav unactive" href="#">Data
+                    Pengaduan
+                    Selesai</a></div>
             <div class="col-12 col-sm-2"><a class="btn-sub-nav" href="dashboard-peringkat.php">Data Peringkat</a></div>
             <hr>
         </div>
-        <!-- table aspirasi -->
+        <!-- table pengaduan -->
         <div id="dataAsp" class="my-3">
-            <h6 class="fw-bold table-title mt-3">DATA LAPORAN ASPIRASI</h6>
+            <h6 class="fw-bold table-title mt-3">DATA LAPORAN PENGADUAN SELESAI</h6>
             <div class="table-responsive">
                 <table class="table table-striped table-hover">
                     <thead class="table-ungu">
@@ -89,37 +88,35 @@
                             $previous = $page - 1;
                             $next = $page + 1;
 
-                            $count = mysqli_query($koneksi, "SELECT COUNT(*) AS jumlah FROM aspirasi");
+                            $count = mysqli_query($koneksi, "SELECT COUNT(*) AS jumlah FROM laporanSelesai");
                             $total_count = mysqli_fetch_assoc($count);
                             $total_page = ceil($total_count['jumlah']/$limit);
 
-                            $data = mysqli_query($koneksi, "SELECT * FROM aspirasi LIMIT $first_page, $limit");
+                            $data = mysqli_query($koneksi, "SELECT * FROM laporanSelesai LIMIT $first_page, $limit");
                             $number = $first_page + 1;
 
                             while ($row = mysqli_fetch_array($data)) {
                         ?>
                             <tr>
-                                <td><?php echo $row['nama_aspirator']; ?></td>
+                                <td><?php echo $row['nama_pelapor']; ?></td>
                                 <td><?php echo $row['rujukan']; ?></td>
                                 <td><?php echo $row['judul']; ?></td>
                                 <td id="button-col">
-                                    <button <?php echo "onclick='location.href=\"../process/finish-process.php?form=aspirasi&kode=".$row['id_aspirasi']."\"'"; ?> 
-                                    class="check"></button>
-                                    <button class="expand" data-bs-toggle="modal" data-bs-target="#aspModal<?php echo $row['id_aspirasi']; ?>"></button>
-                                    <button <?php echo "onclick='location.href=\"../process/delete-process.php?form=aspirasi&kode=".$row['id_aspirasi']."\"'"; ?> 
+                                    <button class="expand" data-bs-toggle="modal" data-bs-target="#aspModal<?php echo $row['id_laporan']; ?>"></button>
+                                    <button <?php echo "onclick='location.href=\"../process/delete-process.php?form=aspirasi&kode=".$row['id_laporan']."\"'"; ?> 
                                     class="delete"></button>
                                 </td>
                             </tr>
-                            <div class="modal fade" id="aspModal<?php echo $row['id_aspirasi']; ?>" tabindex="-1" aria-labelledby="aspExpandedModal" aria-hidden="true">
+                            <div class="modal fade" id="aspModal<?php echo $row['id_laporan']; ?>" tabindex="-1" aria-labelledby="aspExpandedModal" aria-hidden="true">
                                 <div class="modal-dialog modal-xl">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="aspExpandedModal">Substansial Data Aspirasi</h5>
+                                            <h5 class="modal-title" id="aspExpandedModal">Substansial Data Pengaduan Selesai</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                             <?php 
-                                                $ref = $row['id_aspirasi'];
-                                                $query_detail = mysqli_query($koneksi, "SELECT * FROM aspirasi WHERE id_aspirasi='$ref'");
+                                                $ref = $row['id_laporan'];
+                                                $query_detail = mysqli_query($koneksi, "SELECT * FROM laporanSelesai WHERE id_laporan='$ref'");
                                                 while ($col = mysqli_fetch_array($query_detail)) {
                                             ?>
                                             <div class="modal-body">
@@ -127,16 +124,16 @@
                                                     <fieldset disabled>
                                                         <div class="row">
                                                             <div class="col-12 col-lg-4 col-md-12 col-sm-12">
-                                                                <label for="idAspDisabled" class="form-label">ID Aspirasi</label>
+                                                                <label for="idAspDisabled" class="form-label">ID Pengaduan</label>
                                                                 <input type="text" class="form-control" id="idAspDisabled"
-                                                                    value="<?php echo $col['id_aspirasi']; ?>" name="idAspDisabled">
+                                                                    value="<?php echo $col['id_laporan']; ?>" name="idAspDisabled">
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-12 col-lg-4 col-md-12 col-sm-12 pt-3">
                                                                 <label for="namaAspDisabled" class="form-label">Nama Aspirator</label>
                                                                 <input type="text" class="form-control" id="namaAspDisabled"
-                                                                    value="<?php echo $col['nama_aspirator']; ?>" name="namaAspDisabled">
+                                                                    value="<?php echo $col['nama_pelapor']; ?>" name="namaAspDisabled">
                                                             </div>
                                                             <div class="col-12 col-lg-4 col-md-12 col-sm-12 pt-3">
                                                                 <label for="noIdentitasDisabled" class="form-label">Nomor NIM/NIDN/NIK</label>
@@ -238,6 +235,9 @@
         <!-- end of table aspirasi -->
         <!-- end of data -->
     </div>
+
+    <!-- Modal Pengaduan -->
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script-dashboard.js"></script>

@@ -79,7 +79,6 @@
                     </thead>
                     <tbody>
                         <?php 
-                            $jenis = "id_aspirasi";
                             $limit = 5;
                             $page = isset($_GET['page'])?(int)$_GET['page'] : 1;
                             $first_page = ($page > 1) ? ($page * $limit) - $limit : 0;
