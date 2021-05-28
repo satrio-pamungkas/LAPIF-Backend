@@ -55,5 +55,44 @@
         return $email['email'];
     }
 
-    echo get_email_address("satrio");
+    function get_row_by_hard() {
+        global $koneksi;
+
+        $batas = 10;
+        $data = mysqli_query($koneksi, "SELECT * FROM aspirasi");
+        $jumlah_data = mysqli_num_rows($data);
+        $total_halaman = ceil($jumlah_data/$batas);
+
+        return $jumlah_data;
+    }
+
+    function get_row_by_easy() {
+        global $koneksi;
+
+        $batas = 10;
+        $data = mysqli_query($koneksi, "SELECT 32 AS jumlah");
+        $jumlah_data = mysqli_fetch_assoc($data);
+        $total_halaman = ceil($jumlah_data['jumlah']/$batas);
+
+        // return $jumlah_data['jumlah'];
+        return $total_halaman;
+    }
+
+    function get_multiple_row() {
+        global $koneksi;
+        
+        $query = mysqli_query($koneksi, "SELECT * FROM aspirasi");
+        while ($row = mysqli_fetch_array($query)) {
+            $ref = $row['id_aspirasi'];
+            $query_detail = mysqli_query($koneksi, "SELECT * FROM aspirasi WHERE id_aspirasi='$ref'");
+            while ($col = mysqli_fetch_array($query_detail)) {
+                echo $col['nama_aspirator'];
+                echo $col['id_aspirasi'];
+                echo "<br>";
+            }
+    
+        }
+    }
+
+    get_multiple_row();
 ?>
