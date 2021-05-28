@@ -26,8 +26,8 @@
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <div class="text-header m-asp-pengaduan-custom">
-                            <p class="title">Layanan Aspirasi</p>
-                            <p class="description">Kirim aspirasi Anda melalui formulir berikut</p>
+                            <p class="title-asp-pgd">Layanan Aspirasi</p>
+                            <p class="description-asp-pgd">Kirim aspirasi Anda melalui formulir berikut</p>
                         </div>
                     </div>
                 </div>
