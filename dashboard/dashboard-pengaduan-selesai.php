@@ -103,7 +103,7 @@
                                 <td><?php echo $row['judul']; ?></td>
                                 <td id="button-col">
                                     <button class="expand" data-bs-toggle="modal" data-bs-target="#aspModal<?php echo $row['id_laporan']; ?>"></button>
-                                    <button <?php echo "onclick='location.href=\"../process/delete-process.php?form=aspirasi&kode=".$row['id_laporan']."\"'"; ?> 
+                                    <button <?php echo "onclick='location.href=\"../process/delete-process.php?form=pengaduanSelesai&kode=".$row['id_laporan']."\"'"; ?> 
                                     class="delete"></button>
                                 </td>
                             </tr>

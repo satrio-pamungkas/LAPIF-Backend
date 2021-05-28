@@ -94,5 +94,19 @@
         }
     }
 
-    get_multiple_row();
+    function get_number_of_rows() {
+        global $koneksi;
+
+        $count = mysqli_query($koneksi, "SELECT nama_aspirator, COUNT(nama_aspirator),
+        DENSE_RANK() OVER (ORDER BY COUNT(nama_aspirator) DESC) ranking
+        FROM data_nama
+        GROUP BY nama_aspirator");
+
+        $total_count = mysqli_num_rows($count);
+        $total_page = ceil($total_count/5);
+
+        return $total_page;
+    }
+
+    echo get_number_of_rows();
 ?>
