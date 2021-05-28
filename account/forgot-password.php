@@ -22,12 +22,13 @@
                 <h3>Reset Password</h3>
                 <p>Silahkan isi username pengurus yang terdaftar</p>
                 <form action="#" method="POST">
-                    <div class="form-layout">
+                    <div class="form-layout mb-3">
                         <label for="inputEmail" class="descForm">Username</label>
                         <input id="username" type="username" name="username" class="form-control" required>
                     </div>
                     <div class="layout-btn">
-                        <button type="button" class="submit-btn" onclick="validasiForgotPassword()">Kirim</button>
+                        <input type="submit" class="btn btn-primary" id="btnFgPasswd" onclick="validasiForgotPassword()"
+                            value="Kirim" name="forgot">
                     </div>
                     <hr>
                     <p class="descfgpasswd">Belum punya akun pengurus? Silahkan hubungi administrator</p>
