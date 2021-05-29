@@ -24,7 +24,8 @@
                         <a class="nav-font-custom nav-link text-primary" href="#">FORUM</a>
                     </li>
                 </ul>
-                <button class="nav-font-custom btn btn-primary text-white" onclick="redirect()">MASUK</button>
+                <a href="'.$path.'account/login.php"><button class="nav-font-custom btn btn-primary text-white"
+                        onclick="redirect()">MASUK</button></a>
             </div>
         </div>
     </nav>

@@ -26,15 +26,16 @@
                 <form action="../process/login-process.php" method="POST" onsubmit="return validateForm()">
                     <div class="my-3">
                         <label for="username">Username</label>
-                        <input class="form-control" type="text" placeholder="Username" name="username" id="username">
+                        <input class="form-control" type="text" placeholder="Username" name="username" id="username"
+                        value="<?php if(isset($_COOKIE['username'])) { echo $_COOKIE['username']; }?>">
                     </div>
                     <div class="my-3">
                         <label for="password">Password</label>
-                        <input class="form-control" type="password" placeholder="Password" name="password"
-                            id="password">
+                        <input class="form-control" type="password" placeholder="Password" name="password" id="password" 
+                        value="<?php if(isset($_COOKIE['password'])) { echo $_COOKIE['password']; }?>">
                     </div>
                     <div class="form-check my-2">
-                        <input class="form-check-input" type="checkbox" value="" id="rememberPasswd" name="remember">
+                        <input class="form-check-input" type="checkbox" id="rememberPasswd" name="remember">
                         <label class="form-check-label" for="rememberPasswd">Ingat Password</label>
                     </div>
                     <input type="submit" class="btn btn-primary" id="btnMasuk" value="Masuk" name="login">
