@@ -33,7 +33,7 @@
         <?php 
             include "../config/connection.php";
 
-            $data = mysqli_query($koneksi, "SELECT * FROM pertanyaan");
+            $data = mysqli_query($koneksi, "SELECT * FROM pertanyaan ORDER BY waktu DESC");
 
             while ($row = mysqli_fetch_array($data)) {
         ?>

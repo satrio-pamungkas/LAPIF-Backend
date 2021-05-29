@@ -29,7 +29,13 @@
         if ($query) {
             header("Location: ../dashboard/dashboard-pengaduan-selesai.php");
         }
+    } else if ($_GET['form'] == 'forum') {
+        $query = mysqli_query($koneksi, "DELETE FROM pertanyaan WHERE id_pertanyaan='$kode'");
+
+        if ($query) {
+            header("Location: ../dashboard/dashboard-forum.php")
+        }
     } else {
-        echo "404 Not Found";
+        echo "Eror";
     }
 ?>

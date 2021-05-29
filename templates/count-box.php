@@ -41,7 +41,16 @@
         <div class="card text-center">
             <div class="card-body dashboard-bg-card">
                 <p class="card-text fs-4">FORUM</p>
-                <h5 class="card-title fs-1">200</h5>
+                <h5 class="card-title fs-1">
+                    <?php
+                        $query = "SELECT count_forum()";
+
+                        $result = mysqli_query($koneksi, $query);
+                        $num = mysqli_fetch_assoc($result);
+
+                        echo $num['count_forum()'];
+                    ?>
+                </h5>
                 <p class="card-text fs-5">JUMLAH DISKUSI</p>
             </div>
         </div>
