@@ -146,49 +146,65 @@
         <!-- testimonial -->
         <section id="banner-5">
             <div class="container">
-                <div class="banner-5-title py-4">
+                <div class="banner-5-title pt-4 pb-1">
                     <h1>Testimonial</h1>
                 </div>
                 <div class="banner-5-desc">
                     <p>Testimoni resmi untuk <b>LAPIF, </b>sebagian besar berasal dari mahasiswa</p>
                 </div>
                 <div class="row">
-                    <div class="col-1 slider-next-back-layout px-2">
+                    <div class="col-1 col-sm-2 col-lg-1 slider-next-back-layout px-2" onclick="plusSlides(-1)">
                         <img src="img/slider-back.svg" alt="slider back">
                     </div>
                     <div class="col">
-                        <div class="testimonial mx-auto">
-                            <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident
-                                omnis
-                                nihil
-                                molestiae, dolorum voluptate quo, consequatur facere aut expedita porro debitis ratione
-                                eius
-                                sequi
-                                iusto, corrupti autem eum quia ipsum!</p>
+                        <div class="testimonial mx-auto fade-in">
+                            <p class="testimonial-desc">Pelaporan saya ditanggapi dan diproses sesuai dengan ekspetasi
+                                saya, terima kasih LAPIF :)
+                            </p>
                             <div class="testimonial-line"></div>
                             <div class="testimonial-profile">
                                 <div class="testimonial-nama">
                                     <img class="testimonial-photo" src="img/testimony-photo.png" alt="testimoni photo">
                                     <div class="testimonial-info">
-                                        <h5>Muhammad Raihan Satrio</h5>
+                                        <h5>M Sarmani</h5>
+                                        <p>Computer Engineer</p>
+                                    </div>
+                                </div>
+                                <div class="row testimonial-react">
+                                    <div class="col-auto col-sm-auto col-lg-auto col-xxl-12">
+                                        <img class="testimonial-react-icon" src="img/smile.svg" alt="smile.svg">
+                                    </div>
+                                    <div class="col-auto col-sm-auto col-lg-auto col-xxl-12 p-0">
+                                        <span class="text-wrap">Recommended</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial mx-auto fade-in">
+                            <p class="testimonial-desc">Terima kasih LAPIF, aspirasi saya terealisasi untuk
+                                berkontribusi
+                                mengenai fasilitas kampus</p>
+                            <div class="testimonial-line"></div>
+                            <div class="testimonial-profile">
+                                <div class="testimonial-nama">
+                                    <img class="testimonial-photo" src="img/testimony-photo.png" alt="testimoni photo">
+                                    <div class="testimonial-info">
+                                        <h5>Rusty</h5>
                                         <p>Software Engineer</p>
                                     </div>
                                 </div>
                                 <div class="row testimonial-react">
-                                    <div class="row text-center">
-                                        <div class="col-1 px-3">
-                                            <img class="testimonial-react-icon ms-4" src="img/smile.svg"
-                                                alt="smile.svg">
-                                        </div>
-                                        <div class="col px-3">
-                                            <span>Recommended</span>
-                                        </div>
+                                    <div class="col-auto col-sm-auto col-lg-auto col-xxl-12">
+                                        <img class="testimonial-react-icon" src="img/smile.svg" alt="smile.svg">
+                                    </div>
+                                    <div class="col-auto col-sm-auto col-lg-auto col-xxl-12 p-0">
+                                        <span class="text-wrap">Recommended</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-1 slider-next-back-layout px-2">
+                    <div class="col-1 col-sm-2 col-lg-1 slider-next-back-layout px-2" onclick="plusSlides(1)">
                         <img src="img/slider-next.svg" alt="slider next">
                     </div>
                 </div>
@@ -198,6 +214,7 @@
         <?php include 'templates/footer.php'; ?>
         <!-- End Footer -->
     </div>
+    <script src="js/slideshow.js"></script>
     <script src="js/script-pelaporan.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">

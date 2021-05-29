@@ -191,7 +191,7 @@
 }
 
 .slider-next-back-layout {
-    margin-top: 9rem;
+    margin-top: 7rem;
 }
 
 .slider-next-back-layout img {
@@ -204,34 +204,62 @@
     height: 1px;
     width: 100%;
     background-color: #dddddd;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .testimonial {
     background-color: #5157F8;
-    padding: 60px 60px 32px 60px;
+    padding: 25px 60px 25px 60px;
     width: 744px;
     border-radius: 40px;
     box-shadow: 0px 20px 40px 0px rgb(0 0 0 / 10%);
     margin-bottom: 30px;
 }
 
-.testimonial p {
-    font-family: Poppins, sans-serif;
-    font-size: 18px;
-    line-height: 32px;
-    color: white;
+.testimonial:nth-child(n+1) {
+    background-color: #5157F8;
 }
 
+.testimonial:nth-child(n+2) {
+    background-color: #6c5ce7;
+}
 
+.testimonial:nth-child(n+3) {
+    background-color: #0984e3;
+}
+
+.fade-in {
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.5s;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.testimonial-desc {
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    line-height: 32px;
+    color: white;
+    text-align: center;
+}
 
 .testimonial-profile {
-    margin: 32px;
+    padding: 32px;
     display: flex;
 }
 
 .testimonial-profile span {
-    margin: 32px auto;
     font-family: Poppins, sans-serif;
     font-style: italic;
     color: yellow;
@@ -248,25 +276,25 @@
 .testimonial-nama {
     display: flex;
     justify-content: center;
-    width: 50%;
     margin: auto;
+    align-items: center;
 }
 
 .testimonial-react {
+    width: auto;
     align-items: center;
-    width: 50%;
     margin: auto;
 }
 
 .testimonial-react-icon {
-    position: absolute;
     width: 24px;
     height: 24px;
+    text-align: center;
 }
 
 .testimonial-photo {
-    width: 68px;
-    height: 68px;
+    width: 60px;
+    height: 60px;
 }
 
 .testimonial-info {
@@ -285,7 +313,7 @@
 }
 
 .testimonial-info p {
-    font-size: 12px;
+    font-size: 14px;
     color: rgba(0, 0, 0, 0.5);
     line-height: normal;
     margin-bottom: 0px;
@@ -657,6 +685,8 @@
     }
 
     /* Banner 1 XL Ended */
+
+
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -682,17 +712,25 @@
         padding: 32px 32px 32px 32px;
     }
 
+    .testimonial-desc {
+        font-size: 1rem;
+    }
+
     .slider-next-back-layout {
         text-align: center;
     }
 
     .slider-next-back-layout img {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .testimonial-react {
+        justify-content: center;
     }
 
     .testimonial-react-icon {
-        display: none;
+        display: block;
     }
 
     .testimonial-info h5 {
@@ -767,15 +805,32 @@
 
     .slider-next-back-layout {
         padding: 0px 30px 0px 30px;
-        display: none;
+        display: block;
     }
 
     .slider-next-back-layout img {
-        display: none;
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+
+    .testimonial-profile {
+        display: block;
+        padding-bottom: 0px;
+    }
+
+    .testimonial-nama {
+        width: 100%;
+    }
+
+    .testimonial-react {
+        width: 100%;
+        justify-content: center;
+        padding: 15px 0px 15px 0px;
     }
 
     .testimonial-react-icon {
-        display: none;
+        display: block;
     }
 
     .testimonial-info h5 {
@@ -788,6 +843,8 @@
         width: calc(4rem - 2.1vw);
         height: calc(4rem - 2.1vw);
     }
+
+
 
     /* Banner 5 MD */
 
@@ -859,32 +916,40 @@
 
     .testimonial-nama {
         width: 100%;
-        margin: 0;
+        padding: 15px 0px 15px 0px;
     }
 
     .testimonial-react {
         width: 100%;
+        justify-content: center;
+        padding: 15px 0px 15px 0px;
     }
 
     .testimonial-react-icon {
-        display: none;
-        width: 100%;
+        display: block;
+        width: auto;
     }
 
     .testimonial-profile {
+        margin: 0px;
+        padding: 0px;
         display: block;
     }
 
     .testimonial-info h5 {
-        font-size: calc(1rem - 1vw);
+        font-size: calc(1rem - 0.5vw);
         margin-top: 6px;
         margin-bottom: 6px;
     }
 
+    .testimonial-info p {
+        font-size: 12px;
+    }
+
+
     .testimonial-photo {
-        width: calc(4rem - 7vw);
-        height: calc(4rem - 7vw);
-        display: none;
+        width: 40px;
+        height: 40px;
     }
 
     /* Banner 5 SM Ended */
