@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
+<?php 
+    session_start();
+
+    if (!isset($_SESSION['user'])) {
+        header("Location: ../account/login.php");
+    }
+?>
+
 <body class="mt-5">
     <?php include "../config/connection.php"; ?>
     <!-- navbar -->
@@ -39,8 +47,8 @@
                         <a class="nav-font-custom nav-link text-primary" href="#">FORUM</a>
                     </li>
                 </ul>
-                <a href="login.php"><button class="nav-font-custom btn btn-primary text-white"
-                        onclick="redirect()">MASUK</button></a>
+                <a href="../process/logout-process.php"><button class="nav-font-custom btn text-primary"
+                        onclick="redirect()">KELUAR</button></a>
             </div>
         </div>
     </nav>
@@ -76,6 +84,7 @@
                 <table class="table table-striped table-hover">
                     <thead class="table-ungu">
                         <th>NAMA</th>
+                        <th>JUMLAH</th>
                         <th>PERINGKAT</th>
                     </thead>
                     <tbody>
@@ -105,6 +114,7 @@
                         ?>
                             <tr>
                                 <td><?php echo $row['nama_aspirator']; ?></td>
+                                <td><?php echo $row['COUNT(nama_aspirator)']; ?></td>
                                 <td><?php echo $row['ranking']; ?></td>
                             </tr>
                         <?php 
