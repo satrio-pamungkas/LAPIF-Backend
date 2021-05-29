@@ -93,7 +93,16 @@
                     <div class="col text-center">
                         <h1 class="banner-2-title-count mt-5 mb-3">Forum</h1>
                         <div class="banner-2-count count-3">
-                            <span>666</span>
+                            <span>
+                                <?php
+                                    $query = "SELECT count_forum()";
+
+                                    $result = mysqli_query($koneksi, $query);
+                                    $num = mysqli_fetch_assoc($result);
+
+                                    echo $num['count_forum()'];
+                                ?>
+                            </span>
                         </div>
                         <p class="banner-2-description-count mt-3 mb-5">Jumlah Diskusi</p>
                     </div>

@@ -41,7 +41,7 @@
                     <div class="container">
                         <h1 class="display-6"><b><?php echo $question['judul']; ?></b></h1>
                         <hr>
-                        <p class="lead"><?= $question['nama']; ?> - <?= $question['kategori']; ?> - <?= $question['waktu']; ?></p>
+                        <p class="font-lapif-primary"><?= $question['nama']; ?> - <?= $question['kategori']; ?> - <?= $question['waktu']; ?></p>
                         <hr>
                         <p class="lead">
                             <?php echo $question['deskripsi']; ?>
@@ -50,60 +50,51 @@
                 </div>
             </div>
         </div>
-        <br><br>
+        <br>
         <div class="card">
-            <div class="card-header">
-                <h3 class=" text-center">Komentar Lainnya</h3>
+            <?php 
+                $count_query = mysqli_query($koneksi, "SELECT COUNT(*) AS jumlah FROM komentar WHERE id_pertanyaan='$kode'");
+                $count = mysqli_fetch_assoc($count_query);
+            ?>
+            <div class="card-header table-ungu">
+                <h5 class="text-center">Komentar Lainnya <span>(<?= $count['jumlah']; ?>)</span></h5>
             </div>
             <div class="card-body">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text"><i>Anonim</i> - 25/05/2021</p>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <?php 
+                    $comment_query = mysqli_query($koneksi, "SELECT * FROM komentar WHERE id_pertanyaan='$kode' 
+                    ORDER BY waktu DESC");
+
+                    while ($comment = mysqli_fetch_array($comment_query)) {
+                ?>
+                    <div class="card mb-3 shadow">
+                        <h6 class="card-header"><span class="fst-italic"><?= $comment['nama']; ?></span> - <span><?= $comment['waktu']; ?></span></h6>
+                        <div class="card-body">
+                            <p class="card-text"><?php echo $comment['teks_komentar']; ?></p>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text"><i>Anonim</i> - 25/05/2021</p>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text"><i>Anonim</i> - 25/05/2021</p>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                </div>
+                <?php
+                    }
+                ?>
             </div>
         </div>
         <br>
         <div class="card">
-            <div class="card-header">
-                <h3 class=" text-center">Bantu Menjawab dengan Berkomentar</h3>
+            <div class="card-header table-ungu">
+                <h5 class="text-center">Bantu Menjawab dengan Berkomentar</h5>
             </div>
             <div class="card-body">
-                <div class="jumbotron jumbotron-fluid">
-                    <div class="container">
-                        <form action="" class="row p-3">
-                            <div class="col-12">
-                                <label for="nama" class="form-label">Nama</label>
-                                <input type="text" class="form-control" id="nama" placeholder="Nama" name="nama" />
-                            </div>
-                            <div class="col-12">
-                                <label for="deskripsi" class="form-label">Komentar</label>
-                                <textarea class="form-control deskripsi" id="deskripsi" placeholder="Komentar" rows="3"
-                                    cols="50"></textarea>
-                            </div>
-                            <div class="col-12 mt-4">
-                                <input type="submit" class="btn btn-primary float-end"></input>
-                            </div>
-                        </form>
+                <form action="../process/comment-process.php?kode=<?= $kode; ?>" class="row p-2" method="POST">
+                    <div class="col-12 ">
+                        <input type="text" class="form-control" id="nama" placeholder="Nama" name="nama" />
                     </div>
-                </div>
+                    <div class="col-12 mt-3">
+                        <textarea class="form-control deskripsi" id="deskripsi" placeholder="Komentar" rows="3"
+                            name="komentar" cols="50"></textarea>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <input type="submit" name="form-komentar" class="btn btn-primary btn-lapif-primary float-end" value="Kirim">
+                    </div>
+                </form>
             </div>
         </div>
         <br>

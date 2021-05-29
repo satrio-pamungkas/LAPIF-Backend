@@ -621,6 +621,10 @@
     background-image: url("../img/expand.svg");
 }
 
+.viewer {
+    background-image: url("../img/viewer.svg");
+}
+
 .delete {
     background-image: url("../img/delete.svg");
 }

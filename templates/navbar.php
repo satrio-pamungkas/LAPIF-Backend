@@ -21,7 +21,7 @@
                         <a class="nav-font-custom nav-link active text-primary" href="'.$path.'form/aspirasi.php">ASPIRASI</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-font-custom nav-link text-primary" href="#">FORUM</a>
+                        <a class="nav-font-custom nav-link text-primary" href="'.$path.'forum/forum-diskusi.php">FORUM</a>
                     </li>
                 </ul>
                 <a href="'.$path.'account/login.php"><button class="nav-font-custom btn btn-primary text-white"
