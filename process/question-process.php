@@ -14,11 +14,11 @@
     }
 
     if (isset($_POST['pertanyaan'])) {
-        $query = mysqli_query($koneksi, "INSERT INTO pertanyaan VALUES
-        ('$kode_pertanyaan','$nama','$judul','$deskripsi','$kategori','$waktu')");
+        $query = mysqli_query($koneksi, "CALL insert_forum('$kode_pertanyaan','$nama','$judul'
+        ,'$deskripsi','$kategori','$waktu')");
 
         if ($query) {
-            header("Location: ../forum/buat-pertanyaan.php");
+            header("Location: ../forum/forum-diskusi.php");
         } else {
             echo "Gagal";
         }
