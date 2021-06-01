@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
+<?php 
+    session_start();
+
+    if (isset($_SESSION['user'])) {
+        header("Location: ../dashboard/dashboard-aspirasi.php");
+    }
+?>
+
 <body class="bg-login">
     <div class="pt-5">
         <div class="container-xxl p-0">
@@ -40,7 +48,7 @@
                     </div>
                     <input type="submit" class="btn btn-primary" id="btnMasuk" value="Masuk" name="login">
                     <div class="text-decoration-underline text-center mt-3">
-                        <a class="forgot" href="forgot-password.html">Lupa
+                        <a class="forgot" href="forgot-password.php">Lupa
                             Password</a>
                     </div>
                 </form>

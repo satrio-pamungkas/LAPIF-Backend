@@ -20,7 +20,7 @@
         $query = mysqli_query($koneksi, "DELETE FROM laporan WHERE id_laporan='$kode'");
 
         if ($query) {
-            header("Location: ../dashboard/dashboard-pengaduan.php")
+            header("Location: ../dashboard/dashboard-pengaduan.php");
         }
         
     } else if ($_GET['form'] == 'pengaduanSelesai') {
@@ -33,7 +33,7 @@
         $query = mysqli_query($koneksi, "DELETE FROM pertanyaan WHERE id_pertanyaan='$kode'");
 
         if ($query) {
-            header("Location: ../dashboard/dashboard-forum.php")
+            header("Location: ../dashboard/dashboard-forum.php");
         }
     } else {
         echo "Eror";
