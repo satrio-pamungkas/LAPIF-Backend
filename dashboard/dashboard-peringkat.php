@@ -25,7 +25,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="../index.php">
                 <div class="logo">
                     <img class="logo" src="../img/logo.svg" alt="logo.svg" />
                 </div>
@@ -38,13 +38,13 @@
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-font-custom nav-link text-primary" aria-current="page"
-                            href="pengaduan.php">PENGADUAN</a>
+                            href="../form/pengaduan.php">PENGADUAN</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-font-custom nav-link active text-primary" href="aspirasi.php">ASPIRASI</a>
+                        <a class="nav-font-custom nav-link active text-primary" href="../form/aspirasi.php">ASPIRASI</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-font-custom nav-link text-primary" href="#">FORUM</a>
+                        <a class="nav-font-custom nav-link text-primary" href="../forum/forum-diskusi.php">FORUM</a>
                     </li>
                 </ul>
                 <a href="../process/logout-process.php"><button class="nav-font-custom btn text-primary"
