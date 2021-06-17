@@ -3,7 +3,7 @@
 LAPIF merupakan Layanan Aspirasi, Pengaduan, Informasi dan Forum. Aplikasi ini dibuat sebagai tugas besar mata kuliah Pemrograman Web (RL210).
 
 ## Bahasa & Tools
-Menggunakan bahasa PHP, MySQL, dan Composer (Phpmailer)
+Menggunakan bahasa PHP, HTML, CSS, Bootstrap, MySQL, dan Composer (Phpmailer)
 
 ## Penggunaan
 Silakan jalankan dengan XAMPP, pastikan konfigurasi SQL diubah dan disesuaikan (Tabel SQL bersifat *confidential* )
