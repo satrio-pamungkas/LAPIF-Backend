@@ -1,6 +1,6 @@
 # LAPIF-Backend
 ## Deskripsi
-LAPIF merupakan Layanan Aspirasi, Pengaduan, Informasi dan Forum. Aplikasi ini dibuat sebagai tugas besar mata kuliah Pemrograman Web (RL210).
+LAPIF merupakan Layanan Aspirasi, Pengaduan, Informasi dan Forum (terintegrasi). Aplikasi ini dibuat sebagai tugas besar mata kuliah Pemrograman Web (RL210).
 
 ## Bahasa & Tools
 Menggunakan bahasa PHP, HTML, CSS, Bootstrap, MySQL, dan Composer (Phpmailer)
